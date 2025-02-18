@@ -1,4 +1,9 @@
+from typing import List
+
+
 class Solution:
+    """https://leetcode.com/problems/move-zeroes/description/"""
+
     def moveZeroes(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
@@ -10,4 +15,3 @@ class Solution:
                 nums.append(zero)
             else:
                 current_idx += 1
-        return nums

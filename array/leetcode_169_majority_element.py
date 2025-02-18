@@ -1,4 +1,9 @@
+from typing import List
+
+
 class Solution:
+    """https://leetcode.com/problems/majority-element"""
+
     def majorityElementNaive(self, nums: List[int]) -> int:
         """use convienient data structure, map"""
         majority_criteria = len(nums) // 2 + 1  # use quotient
@@ -25,7 +30,7 @@ class Solution:
                 majority_value = n
                 maximum_count = counts[n]
         return majority_value
-    
+
     def majorityElement(self, nums: List[int]) -> int:
         """Follow-up: Could you solve the problem in linear time and in O(1) space?"""
         # You may assume that the majority element always exists in the array
@@ -40,13 +45,10 @@ class Solution:
         #     else:
         #         count += 1
         # return majority_value
-        
+
         majority_value, count = 0, 0
         for n in nums:
             if count == 0:
                 majority_value = n
             count += 1 if majority_value == n else -1
         return majority_value
-
-
-        
